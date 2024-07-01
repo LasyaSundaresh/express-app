@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <%- include('includes/head', { title: 'Contacts'}) %>
+</head>
+<body class="bg-green-100">
+
+  <%- include('includes/header') %>
+
+  <div class="container mx-auto p-6">
+    <a href="/new-contact" class="inline-flex items-center px-4 py-2 bg-blue-900 text-black font-bold rounded-lg shadow hover:bg-blue-600">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+        <path d="M6 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6ZM15.75 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3H18a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-2.25ZM6 12.75a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3v-2.25a3 3 0 0 0-3-3H6ZM17.625 13.5a.75.75 0 0 0-1.5 0v2.625H13.5a.75.75 0 0 0 0 1.5h2.625v2.625a.75.75 0 0 0 1.5 0v-2.625h2.625a.75.75 0 0 0 0-1.5h-2.625V13.5Z" />
+      </svg>
+      
+      New Contact
+     
+    </a>
+
+    <% if (!contacts || contacts.length === 0){ %>
+      <p class="mt-4 text-center text-lg text-gray-600">No contacts found, start creating some!</p>
+    <% } else { %>
+      <div class="overflow-x-auto mt-6">
+        <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden  shadow-lg " >
+          <thead>
+            <tr >
+              <th class="px-4 py-2 bg-gray-800 text-white">Name</th>
+              <th class="px-4 py-2 bg-gray-800 text-white">E-mail</th>
+              <th class="px-4 py-2 bg-gray-800 text-white">Phone</th>
+              <th class="px-4 py-2 bg-gray-800 text-white">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="shadow-lg rounded-lg divide-y divide-gray-200 text-center py-1">
+            <% for (const contact of contacts) { %>
+              <%- include('includes/contact__item', { contact: contact }) %>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+
+</body>
+</html>

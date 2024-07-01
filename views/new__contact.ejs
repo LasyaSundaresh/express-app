@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <%- include('includes/head', { title: 'New Contact'}) %>
+  </head>
+  <body class="bg-green-100 ">
+    <%- include('includes/header') %>
+    
+    <div class="container mx-auto p-6">
+      <div class="heading mb-6">
+        <a href="/" class="nav__link flex items-center justify-center gap-2 px-4 py-2 border border-black-900 text-blue-600 rounded-lg">
+          All Contacts
+          <img src="https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/48/Contacts-icon.png" alt="">
+        </a>
+      </div>
+
+      <form action="/" method="post" class="form__container max-w-xl mx-auto bg-white p-8 shadow-md rounded-lg">
+        <h3 class="text-xl font-bold mb-4">New Contact</h3>
+        <p class="text-gray-600 mb-6">Fill up the form below to create a new contact</p>
+        <div class="form__item mb-4">
+          <label for="name" class="block font-semibold mb-2 text-gray-700">Full Name 👤</label>
+          <input type="text" name="name" id="name" required class="w-full p-3 border border-gray-300 rounded"/>
+        </div>
+        <div class="form__item mb-4">
+          <label for="email" class="block font-semibold mb-2 text-gray-700">E-mail 📧</label>
+          <input type="email" name="email" id="email" class="w-full p-3 border border-gray-300 rounded"/>
+        </div>
+        <div class="form__item mb-4">
+          <label for="phone" class="block font-semibold mb-2 text-gray-700">Telephone 📱</label>
+          <input 
+            type="tel" 
+            name="phone" 
+            id="phone" 
+            class="w-full p-3 border border-gray-300 rounded" 
+            pattern="\d{10}" 
+            maxlength="10" 
+            required 
+            title="Please enter exactly 10 digits"
+          />
+        </div>
+        
+        <button class="text-white font-bold bg-blue-900 hover:bg-blue-500 py-2 px-4 rounded">SAVE</button>
+      </form>
+    </div>
+  </body>
+</html>
