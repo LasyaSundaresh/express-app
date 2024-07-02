@@ -1,20 +1,28 @@
 {
-  "name": "mongodb__crud__address__book",
-  "version": "1.0.0",
-  "description": "CRUD (Create, Read, Update, Delete) application built using Node.js, Express.js, EJS templating engine and MongoDB database.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "ejs": "^3.1.9",
-    "express": "^4.19.2",
-    "mongodb": "^6.5.0",
-    "nodemon": "^3.1.0",
-    "tailwindcss": "^3.4.4"
-  },
-  "devDependencies": {}
+ "homepage": "https://LasyaSundaresh.github.io/express-vercel-app",
+ "name": "mongodb__crud__address__book",
+ "version": "1.0.0",
+ "description": "CRUD (Create, Read, Update, Delete) application built using Node.js, Express.js, EJS templating engine and MongoDB database.",
+ "main": "index.js",
+ "scripts": {
+  "build": "your-build-command-here",
+  "start": "node app.js",
+
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "MIT",
+ "dependencies": {
+  "ejs": "^3.1.9",
+  "express": "^4.19.2",
+  "mongodb": "^6.5.0",
+  "nodemon": "^3.1.0",
+  "tailwindcss": "^3.4.4",
+  "next": "13.5.3"
+ },
+ "devDependencies": {
+  "gh-pages": "^6.1.1"
+ }
 }
