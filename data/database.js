@@ -1,5 +1,5 @@
 const mongodb = require("mongodb");
-
+equire('dotenv').config();
 const MongoClient = mongodb.MongoClient;
 
 let database;
